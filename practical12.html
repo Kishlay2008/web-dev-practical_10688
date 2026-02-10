@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS Loops & Conditions</title>
+    <style>
+        body{
+            background-color: rgb(178, 248, 248);
+        }
+    </style>
+</head>
+<body>
+    <h2>Loops & Conditions</h2>
+     <script>
+        // if–else condition
+        let num = 5;
+        if (num > 0) {
+            document.write("Number is positive<br>");
+        } else if (num < 0) {
+            document.write("Number is negative<br>");
+        } else {
+            document.write("Number is zero<br>");
+        }
+         document.write("<hr>");
+          // for loop
+        document.write("<h3>For Loop</h3>");
+        for (let i = 1; i <= 3; i++) {
+            document.write("i = " + i + "<br>");
+        }
+        document.write("<hr>");
+         // while loop
+        document.write("<h3>While Loop</h3>");
+        let j = 1;
+        while (j <= 3) {
+            document.write("j = " + j + "<br>");
+            j++;
+        }
+         document.write("<hr>");
+
+        // do…while loop
+        document.write("<h3>Do While Loop</h3>");
+        let k = 1;
+        do {
+            document.write("k = " + k + "<br>");
+            k++;
+        } while (k <= 3);
+    </script>
+</body></html>

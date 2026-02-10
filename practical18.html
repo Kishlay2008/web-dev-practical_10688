@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic Element Manipulation</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #controls {
+            margin-bottom: 15px;
+        }
+
+        #board {
+            border: 2px solid #444;
+            padding: 15px;
+            min-height: 150px;
+        }
+
+        .card {
+            background-color: #e3f2fd;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 5px;
+        }
+
+        .highlight {
+            background-color: #c8e6c9;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Dynamic Task Board using JavaScript</h2>
+
+    <p>
+        This example shows how elements are created, appended,
+        modified, and removed dynamically using JavaScript.
+    </p>
+
+    <div id="controls">
+        <button onclick="addTask()">Add Task</button>
+        <button onclick="highlightLast()">Highlight Last Task</button>
+        <button onclick="removeLast()">Remove Last Task</button>
+    </div>
+
+    <div id="board">
+        <p><b>Task Board:</b></p>
+    </div>
+
+    <script>
+        let count = 1;
+        const board = document.getElementById("board");
+
+        // Create and append element
+        function addTask() {
+            const task = document.createElement("div");
+            task.className = "card";
+            task.textContent = "Task " + count + ": This task was added dynamically";
+
+            board.appendChild(task);
+            count++;
+        }
+
+        // Modify last child
+        function highlightLast() {
+            const tasks = board.getElementsByClassName("card");
+            if (tasks.length > 0) {
+                tasks[tasks.length - 1].classList.toggle("highlight");
+            }
+        }
+
+        // Remove last child
+        function removeLast() {
+            const tasks = board.getElementsByClassName("card");
+            if (tasks.length > 0) {
+                board.removeChild(tasks[tasks.length - 1]);
+                count--;
+            }
+        }
+    </script>
+
+</body>
+</html>

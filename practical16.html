@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show Hide Elements using JavaScript</title>
+
+    <!-- Internal CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #box {
+            width: 250px;
+            height: 120px;
+            background-color: lightblue;
+            margin-top: 20px;
+            text-align: center;
+            line-height: 120px;
+            border-radius: 5px;
+        }
+
+        /* Class to hide element */
+        .hide {
+            display: none;
+        }
+
+        /* Class to toggle style */
+        .active {
+            background-color: green;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Show / Hide HTML Element and Toggle CSS Class</h2>
+
+    <p>
+        Click the buttons below to show or hide the HTML element
+        and to dynamically change its style using JavaScript.
+    </p>
+
+    <button onclick="toggleBox()">Show / Hide Box</button>
+    <button onclick="toggleStyle()">Toggle Style</button>
+
+    <div id="box">
+        This is a sample box
+    </div>
+
+    <!-- Internal JavaScript -->
+    <script>
+        // Function to show or hide the element
+        function toggleBox() {
+            document.getElementById("box").classList.toggle("hide");
+        }
+
+        // Function to toggle CSS class dynamically
+        function toggleStyle() {
+            document.getElementById("box").classList.toggle("active");
+        }
+    </script>
+
+</body>
+</html>
